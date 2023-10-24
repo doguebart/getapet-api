@@ -1,7 +1,10 @@
+require("dotenv").config();
+
 const mongoose = require("mongoose");
+const mongodbUri = process.env.MONGODB_URI;
 
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/getapet");
+  await mongoose.connect(mongodbUri);
 
   console.log("Conectou ao mongoDb");
 }
